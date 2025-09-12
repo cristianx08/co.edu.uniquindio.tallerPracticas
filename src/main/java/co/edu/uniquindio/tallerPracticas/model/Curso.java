@@ -1,5 +1,7 @@
 package co.edu.uniquindio.tallerPracticas.model;
 
+import java.util.ArrayList;
+
 public class Curso {
 
     private String nombre;
@@ -7,16 +9,25 @@ public class Curso {
     private String grupo;
     private int creditos;
     private String jornada;
+    private ArrayList<Estudiante>estudiantes;
 
     public Curso() {
 
     }
+
     public Curso(String nombre, String semestre, String grupo, int creditos, String jornada) {
         this.nombre = nombre;
         this.semestre = semestre;
         this.grupo = grupo;
         this.creditos = creditos;
         this.jornada = jornada;
+        this.estudiantes = new ArrayList<>();
+    }
+    public void agregarEstudiante(Estudiante estudiante) {
+        estudiantes.add(estudiante);
+    }
+    public ArrayList<Estudiante>getEstudiantes() {
+        return estudiantes;
     }
 
     public String getNombre() {

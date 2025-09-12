@@ -26,11 +26,8 @@ public class Estudiante {
         double resultado = (nota1 + nota2 + nota3) / 3;
         return resultado;
     }
-    public void obtenerNotas() {
-        System.out.println("Notas del estudiante " + nombre + ": " + nota1 + "," + nota2 + "," + nota3 );
-    }
-    public int getEdadCalculada() {
-        return edad;
+    public String obtenerNotas() {
+        return "Notas del estudiante " + nombre + ": " + nota1 + " - " + nota2 + " - " + nota3;
     }
 
     public String getNombre() {
@@ -87,5 +84,15 @@ public class Estudiante {
 
     public void setNota3(double nota3) {
         this.nota3 = nota3;
+    }
+    @Override
+    public String toString() {
+        return "Estudiante {" +
+                "nombre='" + nombre + '\'' +
+                ", edad=" + edad +
+                ", correo='" + correoElectronico + '\'' +
+                ", semestre='" + semestre + '\'' +
+                ", nota definitiva=" + String.format("%.2f", calcularNotaDefinitiva()) +
+                '}';
     }
 }
