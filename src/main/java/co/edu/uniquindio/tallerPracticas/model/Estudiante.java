@@ -3,27 +3,36 @@ package co.edu.uniquindio.tallerPracticas.model;
 public class Estudiante {
 
     private String nombre;
+    private String apellido;
     private int edad;
     private String correoElectronico;
     private String semestre;
     private double nota1;
     private double nota2;
     private double nota3;
+    private double nota4;
+    private double nota5;
+
+
+    private Universidad ownedByUniversidad;
 
     public Estudiante() {
 
     }
-    public Estudiante(String nombre, int edad, String correoElectronico, String semestre, double nota1, double nota2, double nota3) {
+    public Estudiante(String nombre, String apellido, int edad, String correoElectronico, String semestre, double nota1, double nota2, double nota3, double nota4, double nota5) {
         this.nombre = nombre;
+        this.apellido = apellido;
         this.edad = edad;
         this.correoElectronico = correoElectronico;
         this.semestre = semestre;
         this.nota1 = nota1;
         this.nota2 = nota2;
         this.nota3 = nota3;
+        this.nota4 = nota4;
+        this.nota5 = nota5;
     }
     public double calcularNotaDefinitiva() {
-        double resultado = (nota1 + nota2 + nota3) / 3;
+        double resultado = (nota1 + nota2 + nota3 + nota4 + nota5) / 5;
         return resultado;
     }
     public String obtenerNotas() {
@@ -36,6 +45,13 @@ public class Estudiante {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
     public int getEdad() {
@@ -85,6 +101,31 @@ public class Estudiante {
     public void setNota3(double nota3) {
         this.nota3 = nota3;
     }
+
+    public double getNota4() {
+        return nota4;
+    }
+
+    public void setNota4(double nota4) {
+        this.nota4 = nota4;
+    }
+
+    public double getNota5() {
+        return nota5;
+    }
+
+    public void setNota5(double nota5) {
+        this.nota5 = nota5;
+    }
+
+    public Universidad getOwnedByUniversidad() {
+        return ownedByUniversidad;
+    }
+
+    public void setOwnedByUniversidad(Universidad ownedByUniversidad) {
+        this.ownedByUniversidad = ownedByUniversidad;
+    }
+
     @Override
     public String toString() {
         return "Estudiante {" +

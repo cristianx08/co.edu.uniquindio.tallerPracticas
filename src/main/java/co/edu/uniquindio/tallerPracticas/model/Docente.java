@@ -32,7 +32,6 @@ public class Docente {
     }
 
     public String getNombre() {
-
         return nombre;
     }
 
