@@ -3,6 +3,7 @@ package co.edu.uniquindio.tallerPracticas.model;
 public class Docente {
 
     private String nombre;
+    private String apellido;
     private int edad;
     private String correoElectronico;
 
@@ -10,8 +11,9 @@ public class Docente {
 
     }
 
-    public Docente(String nombre, int edad, String correoElectronico) {
+    public Docente(String nombre, String apellido, int edad, String correoElectronico) {
         this.nombre = nombre;
+        this.apellido = apellido;
         this.edad = edad;
         this.correoElectronico = correoElectronico;
     }
@@ -28,7 +30,7 @@ public class Docente {
         int edad1 = estudiante1.getEdad();
         int edad2 = estudiante2.getEdad();
         int edad3 = estudiante3.getEdad();
-        return (edad1 + edad2 + edad3) / 3;
+        return (edad1 + edad2 + edad3) / 3.0;
     }
 
     public String getNombre() {
@@ -57,5 +59,22 @@ public class Docente {
     public void setCorreoElectronico(String correoElectronico) {
 
         this.correoElectronico = correoElectronico;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+    @Override
+    public String toString() {
+        return "Docente {" +
+                ", Nombre='" + nombre + '\'' +
+                ", Apellido='" + apellido + '\'' +
+                ", Edad=" + edad +
+                ", Correo='" + correoElectronico + '\'' +
+                '}';
     }
 }

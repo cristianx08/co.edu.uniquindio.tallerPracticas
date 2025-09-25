@@ -4,6 +4,7 @@ public class Estudiante {
 
     private String nombre;
     private String apellido;
+    private String identificacion;
     private int edad;
     private String correoElectronico;
     private String semestre;
@@ -19,9 +20,12 @@ public class Estudiante {
     public Estudiante() {
 
     }
-    public Estudiante(String nombre, String apellido, int edad, String correoElectronico, String semestre, double nota1, double nota2, double nota3, double nota4, double nota5) {
+    public Estudiante(String nombre, String apellido, String identificacion, int edad,
+                      String correoElectronico, String semestre, double nota1,
+                      double nota2, double nota3, double nota4, double nota5) {
         this.nombre = nombre;
         this.apellido = apellido;
+        this.identificacion = identificacion;
         this.edad = edad;
         this.correoElectronico = correoElectronico;
         this.semestre = semestre;
@@ -36,7 +40,7 @@ public class Estudiante {
         return resultado;
     }
     public String obtenerNotas() {
-        return "Notas del estudiante " + nombre + ": " + nota1 + " - " + nota2 + " - " + nota3;
+        return "Notas del estudiante " + nombre + ": " + nota1 + " - " + nota2 + " - " + nota3 + " - " + nota4 + " - " + nota5;
     }
 
     public String getNombre() {
@@ -126,14 +130,24 @@ public class Estudiante {
         this.ownedByUniversidad = ownedByUniversidad;
     }
 
+    public String getIdentificacion() {
+        return identificacion;
+    }
+
+    public void setIdentificacion(String identificacion) {
+        this.identificacion = identificacion;
+    }
+
     @Override
     public String toString() {
         return "Estudiante {" +
-                "nombre='" + nombre + '\'' +
-                ", edad=" + edad +
-                ", correo='" + correoElectronico + '\'' +
-                ", semestre='" + semestre + '\'' +
-                ", nota definitiva=" + String.format("%.2f", calcularNotaDefinitiva()) +
+                "Identificación='" + identificacion + '\'' +
+                ", Nombre='" + nombre + '\'' +
+                ", Apellido='" + apellido + '\'' +
+                ", Edad=" + edad +
+                ", Correo='" + correoElectronico + '\'' +
+                ", Semestre='" + semestre + '\'' +
+                ", Nota definitiva=" + calcularNotaDefinitiva() +
                 '}';
     }
 }

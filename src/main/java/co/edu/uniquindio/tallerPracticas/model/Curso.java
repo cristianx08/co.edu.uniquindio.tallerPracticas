@@ -69,4 +69,14 @@ public class Curso {
     public void setJornada(String jornada) {
         this.jornada = jornada;
     }
+    @Override
+    public String toString() {
+        return "Curso {" +
+                "Nombre='" + nombre + '\'' +
+                ", Semestre='" + semestre + '\'' +
+                ", Grupo='" + grupo + '\'' +
+                ", Créditos=" + creditos +
+                ", Jornada='" + jornada + '\'' +
+                '}';
+    }
 }
