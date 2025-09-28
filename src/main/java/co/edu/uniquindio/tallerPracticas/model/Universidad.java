@@ -88,15 +88,16 @@ public class Universidad {
         return false;
     }
     public boolean crearDocente(Universidad universidad) {
-        String correo = leerStringConsola("Ingrese el correo del docente: ");
-        Docente docenteEncontrado = obtenerDocente(correo);
+        String identificacion = leerStringConsola("Ingrese la identificacion del docente: ");
+        Docente docenteEncontrado = obtenerDocente(identificacion);
 
         if (docenteEncontrado == null) {
             String nombre = leerStringConsola("Ingrese el nombre del docente: ");
             String apellido = leerStringConsola("Ingrese el apellido: ");
             int edad = leerEntero("Ingrese la edad: ");
+            String correo = leerStringConsola("Ingrese el correo del docente: ");
 
-            Docente docente = new Docente(nombre, apellido, edad, correo);
+            Docente docente = new Docente(nombre, apellido, identificacion, edad, correo);
             universidad.getListaDocentes().add(docente);
 
             return true;
@@ -104,16 +105,16 @@ public class Universidad {
             return false;
         }
     }
-    public Docente obtenerDocente(String correo) {
+    public Docente obtenerDocente(String identificacion) {
         for (Docente docente : listaDocentes) {
-            if (docente.getCorreoElectronico().equalsIgnoreCase(correo)) {
+            if (docente.getIdentificacion().equalsIgnoreCase(identificacion)) {
                 return docente;
             }
         }
         return null;
     }
-    public boolean eliminarDocente(String correo) {
-        Docente docente = obtenerDocente(correo);
+    public boolean eliminarDocente(String identificacion) {
+        Docente docente = obtenerDocente(identificacion);
         if (docente != null) {
             listaDocentes.remove(docente);
             return true;
@@ -213,11 +214,11 @@ public class Universidad {
         System.out.println("Estudiante actualizado correctamente: " + estudiante);
         return true;
     }
-    public boolean actualizarDocente(String nombreDocente) {
-        Docente docente = obtenerDocente(nombreDocente);
+    public boolean actualizarDocente(String identificacion) {
+        Docente docente = obtenerDocente(identificacion);
 
         if (docente == null) {
-            System.out.println("No se encontró un docente con ese nombre.");
+            System.out.println("No se encontró un docente con a identificacion.");
             return false;
         }
 

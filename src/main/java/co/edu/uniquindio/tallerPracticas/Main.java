@@ -94,24 +94,24 @@ public class Main {
                     System.out.println(creado ? "Docente creado exitosamente." : "El docente ya existe.");
                 }
                 case 2 -> {
-                    String correo = leerStringConsola("Ingrese el correo electronico del docente que desea buscar.");
-                    Docente doc = universidad.obtenerDocente(correo);
+                    String id = leerStringConsola("Ingrese la identificacion del docente que desea buscar.");
+                    Docente doc = universidad.obtenerDocente(id);
                     System.out.println(doc != null ? doc : "Docente no encontrado.");
                 }
                 case 3 -> {
-                    String correo = leerStringConsola("Ingrese el correo electronico del docente que desea eliminar.");
-                    boolean eliminado = universidad.eliminarDocente(correo);
+                    String id = leerStringConsola("Ingrese la identificacion del docente que desea eliminar.");
+                    boolean eliminado = universidad.eliminarDocente(id);
                     System.out.println(eliminado ? "Docente eliminado con exito." : "Docente no encontrado.");
                 }
                 case 4 -> {
                     System.out.println("Lista de docentes: ");
-                    for (Docente d : universidad.getListaDocentes()) {
-                        System.out.println(d);
+                    for (Docente doce : universidad.getListaDocentes()) {
+                        System.out.println(doce);
                     }
                 }
                 case 5 -> {
-                    String correo = leerStringConsola("Ingrese el correo del docente a actualizar :");
-                    boolean actualizado = universidad.actualizarDocente(correo);
+                    String id = leerStringConsola("Ingrese la identificacion del docente a actualizar :");
+                    boolean actualizado = universidad.actualizarDocente(id);
                     System.out.println(actualizado ? "Docente actualizado." : "Docente no encontrado.");
                 }
                 case 6 -> System.out.println("Regresando al menu principal...");

@@ -10,9 +10,10 @@ public class Curso {
     private int creditos;
     private String jornada;
     private ArrayList<Estudiante>estudiantes;
+    private Docente docente;
 
     public Curso() {
-
+        this.estudiantes = new ArrayList<>();
     }
 
     public Curso(String nombre, String semestre, String grupo, int creditos, String jornada) {
@@ -23,13 +24,24 @@ public class Curso {
         this.jornada = jornada;
         this.estudiantes = new ArrayList<>();
     }
+
     public void agregarEstudiante(Estudiante estudiante) {
-        estudiantes.add(estudiante);
+        if (estudiante != null && ! estudiantes.contains(estudiante)) {
+            estudiantes.add(estudiante);
+        }
+    }
+    public void removerEstudiante(Estudiante estudiante) {
+        estudiantes.remove(estudiante);
     }
     public ArrayList<Estudiante>getEstudiantes() {
         return estudiantes;
     }
-
+    public Docente getDocente() {
+        return docente;
+    }
+    public void setDocente(Docente docente) {
+        this.docente = docente;
+    }
     public String getNombre() {
         return nombre;
     }

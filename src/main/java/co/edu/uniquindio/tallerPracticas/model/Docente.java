@@ -4,6 +4,7 @@ public class Docente {
 
     private String nombre;
     private String apellido;
+    private String identificacion;
     private int edad;
     private String correoElectronico;
 
@@ -11,9 +12,10 @@ public class Docente {
 
     }
 
-    public Docente(String nombre, String apellido, int edad, String correoElectronico) {
+    public Docente(String nombre, String apellido, String identificacion, int edad, String correoElectronico) {
         this.nombre = nombre;
         this.apellido = apellido;
+        this.identificacion = identificacion;
         this.edad = edad;
         this.correoElectronico = correoElectronico;
     }
@@ -68,9 +70,19 @@ public class Docente {
     public void setApellido(String apellido) {
         this.apellido = apellido;
     }
+
+    public String getIdentificacion() {
+        return identificacion;
+    }
+
+    public void setIdentificacion(String identificacion) {
+        this.identificacion = identificacion;
+    }
+
     @Override
     public String toString() {
         return "Docente {" +
+                "Identificacion'" + identificacion + '\'' +
                 ", Nombre='" + nombre + '\'' +
                 ", Apellido='" + apellido + '\'' +
                 ", Edad=" + edad +
