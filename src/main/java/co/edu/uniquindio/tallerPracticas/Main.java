@@ -176,7 +176,7 @@ public class Main {
         estudiante1.setIdentificacion("1093456784");
         estudiante1.setEdad(19);
         estudiante1.setCorreoElectronico("cristiancruz@gmail.com");
-        estudiante1.setSemestre("2do semestre");
+        estudiante1.setSemestre(2);
         estudiante1.setNota1(3.5);
         estudiante1.setNota2(4.0);
         estudiante1.setNota3(3.0);
@@ -189,7 +189,7 @@ public class Main {
         estudiante2.setIdentificacion("16752347895");
         estudiante2.setEdad(23);
         estudiante2.setCorreoElectronico("felipearbelaez12@gmail.com");
-        estudiante2.setSemestre("2do semestre");
+        estudiante2.setSemestre(2);
         estudiante2.setNota1(3.0);
         estudiante2.setNota2(4.2);
         estudiante2.setNota3(2.7);
@@ -202,7 +202,7 @@ public class Main {
         estudiante3.setIdentificacion("15670098279");
         estudiante3.setEdad(18);
         estudiante3.setCorreoElectronico("valenciadaniel88@gmail.com");
-        estudiante3.setSemestre("2do semestre");
+        estudiante3.setSemestre(2);
         estudiante3.setNota1(1.8);
         estudiante3.setNota2(5.0);
         estudiante3.setNota3(2.2);

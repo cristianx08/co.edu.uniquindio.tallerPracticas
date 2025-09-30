@@ -7,7 +7,7 @@ public class Estudiante {
     private String identificacion;
     private int edad;
     private String correoElectronico;
-    private String semestre;
+    private int semestre;
     private double nota1;
     private double nota2;
     private double nota3;
@@ -21,7 +21,7 @@ public class Estudiante {
 
     }
     public Estudiante(String nombre, String apellido, String identificacion, int edad,
-                      String correoElectronico, String semestre, double nota1,
+                      String correoElectronico, int semestre, double nota1,
                       double nota2, double nota3, double nota4, double nota5) {
         this.nombre = nombre;
         this.apellido = apellido;
@@ -74,11 +74,11 @@ public class Estudiante {
         this.correoElectronico = correoElectronico;
     }
 
-    public String getSemestre() {
+    public int getSemestre() {
         return semestre;
     }
 
-    public void setSemestre(String semestre) {
+    public void setSemestre(int semestre) {
         this.semestre = semestre;
     }
 

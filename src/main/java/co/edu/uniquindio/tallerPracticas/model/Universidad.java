@@ -52,7 +52,7 @@ public class Universidad {
             String apellido = leerStringConsola("Ingrese el apellido: ");
             int edad = leerEntero("Ingrese la edad: ");
             String correo = leerStringConsola("Ingrese el correo: ");
-            String semestre = leerStringConsola("Ingrese el semestre: ");
+            int semestre = leerEntero("Ingrese el semestre: ");
             double nota1 = leerDoubleConsola("Ingrese la nota 1: ");
             double nota2 = leerDoubleConsola("Ingrese la nota 2: ");
             double nota3 = leerDoubleConsola("Ingrese la nota 3: ");
@@ -67,6 +67,22 @@ public class Universidad {
         } else {
             return false;
         }
+    }
+    public boolean esSemetreFibonacci(Estudiante estudiante) {
+        int semestre = estudiante.getSemestre();
+        if(semestre < 0){
+            return false;
+        }
+        int a = 0, b = 1;
+        for (int i = 0; b <= semestre; i++) {
+            if(b == semestre || semestre == 0) {
+                return true;
+            }
+            int siguiente = b;
+            b = a + b;
+            a = siguiente;
+        }
+        return false;
     }
     public Estudiante obtenerEstudiante(String identificacion) {
         Estudiante estudianteEncontrado =  null;
@@ -188,7 +204,7 @@ public class Universidad {
 
         String semestre = leerStringConsola("Nuevo semestre: ");
         if (!semestre.isEmpty()) {
-            estudiante.setSemestre(semestre);
+            estudiante.setSemestre(Integer.parseInt(semestre));
         }
         String n1 = leerStringConsola("Nueva nota 1: ");
         if (!n1.isEmpty()) {
